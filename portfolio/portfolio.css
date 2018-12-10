@@ -1,0 +1,28 @@
+html{
+  background-color:rgba(143, 135, 134, 0.04);
+}
+
+
+h1 {
+  background-color:rgba(92, 77, 76, 0.23);
+  border-radius: 6px;
+  font-family: 'Artifika', serif;
+}
+
+h2 {
+    background-color:rgba(126, 121, 122, 0.29);
+    border-radius: 6px;
+    font-family: 'Source Code Pro', monospace;
+}
+
+p,ul,ol {
+     font-family: 'Average Sans', sans-serif;
+}
+
+h2, h1 {
+    text-transform: uppercase;
+}
+
+.date {
+  font-style: italic;
+}

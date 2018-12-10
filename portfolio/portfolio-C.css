@@ -1,0 +1,12 @@
+body {
+ max-width: 1200px;
+}
+
+#me-large {
+  display: inline;
+  width: 250px;
+}
+
+#me-small {
+  display: none;
+}
