@@ -1,4 +1,36 @@
+/*
+
 img {
-float: right;
-padding-left: abslot;
+  position: absolute;
+  height: 270px;
+  width:150px;
+  padding-top: 60px;
+  padding-left: 940px;
+  right: 0;
+}
+*/
+
+#info-and-photo {
+  position: relative;
+}
+
+#personal-information {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+#personal-information ul {
+  width: 50%;
+}
+
+#info-and-photo p {
+  position: absolute;
+  top: 1em;
+  right: 1em;
+}
+
+#work-experience {
+  margin-top: 22em;
 }

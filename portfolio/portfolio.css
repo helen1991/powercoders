@@ -1,28 +1,48 @@
 html{
-  background-color:rgba(143, 135, 134, 0.04);
+  background-color: rgba(4, 3, 2, 0.04);
+  margin-left: 20px
 }
 
+div {
+  margin-bottom: 10px;
+  border: 0.5px solid black;
+  border-radius:0px;
+}
+
+.no-border {
+  border: 0px;
+}
 
 h1 {
-  background-color:rgba(92, 77, 76, 0.23);
-  border-radius: 6px;
+  background-color:rgba(32, 28, 28, 0.05);
+  border-radius: 1px;
   font-family: 'Artifika', serif;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 h2 {
-    background-color:rgba(126, 121, 122, 0.29);
-    border-radius: 6px;
+    background-color: rgba(32, 28, 28, 0.05);
+    border-radius: 1px;
     font-family: 'Source Code Pro', monospace;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 p,ul,ol {
      font-family: 'Average Sans', sans-serif;
+     font-size: 18px;
 }
 
 h2, h1 {
+    text-align: left;
     text-transform: uppercase;
 }
 
 .date {
   font-style: italic;
+}
+
+#me-small {
+  display: none;
 }
