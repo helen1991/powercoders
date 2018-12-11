@@ -1,0 +1,19 @@
+html{
+  background-color:rgb(184, 212, 219);
+}
+
+h1 {
+  background-color:rgb(221, 90, 141);
+  border-radius: 6px;
+  font-family: 'Artifika', serif;
+}
+
+h2 {
+    background-color:rgb(238, 153, 74);
+    border-radius: 6px;
+    font-family: 'Source Code Pro', monospace;
+}
+
+p,ul,ol {
+     font-family: 'Average Sans', sans-serif;
+}

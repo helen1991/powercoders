@@ -1,0 +1,25 @@
+html{
+  background-color:rgb(231, 232, 165);
+}
+
+h1 {
+  background-color:rgb(236, 94, 25);
+  border-radius: 6px;
+  font-family: 'Artifika', serif;
+}
+
+h2 {
+    background-color:rgb(222, 141, 47);
+    border-radius: 6px;
+    font-family: 'Source Code Pro', monospace;
+}
+
+p,ul,ol {
+     font-family: 'Average Sans', sans-serif;
+}
+
+img{
+  width: 100%;
+  height: 100%;
+
+}

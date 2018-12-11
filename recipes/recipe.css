@@ -1,0 +1,13 @@
+html{
+   background-color:rgba(173, 224, 240, 0.56);
+
+}
+
+h1 {
+  background-color:rgb(246, 167, 207);
+  font-family: 'Oswald', sans-serif;
+}
+
+p,ul,ol {
+  font-family: 'Roboto Slab', serif;
+}

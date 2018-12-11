@@ -1,0 +1,34 @@
+html{
+  background-color:rgba(238, 175, 175, 0.75);
+}
+
+body {
+  position: relative;
+}
+
+
+
+
+
+h1 {
+  background-color:rgb(252, 8, 37);
+  border-radius: 6px;
+  font-family: 'Artifika', serif;
+}
+
+h2 {
+    background-color: rgb(252, 8, 37);
+    border-radius: 6px;
+    font-family: 'Source Code Pro', monospace;
+}
+
+p,ul,ol {
+     font-family: 'Average Sans', sans-serif;
+}
+
+
+div {
+  border: 1px solid black;
+  background-color: rgb(238, 238, 238);
+  padding: .5em;
+}

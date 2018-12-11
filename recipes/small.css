@@ -1,0 +1,10 @@
+div#img, div#equipment, div#ingredients, div#instructions {
+  position: static;
+  left:1em;
+  min-height: 20em;
+  width: 95%;
+}
+
+div#img img{
+  width: 100%;
+}

@@ -1,0 +1,33 @@
+div#img{
+  position: absolute;
+  left:1em;
+  min-height: 20em;
+  width: 45%;
+}
+
+div#img img{
+  width: 100%;
+}
+
+div#equipment{
+  position: absolute;
+  left:auto;
+  right: 1em;
+  min-height: 20em;
+  width: 45%;
+}
+div#ingredients{
+  position: absolute;
+  min-height: 20em;
+  width: 94%;
+  top:26em;
+  left:1em;
+
+}
+div#instructions {
+  position: absolute;
+  left: 1em;
+  width:94%;
+  top: 48.5em;
+
+}
