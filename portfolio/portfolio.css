@@ -43,6 +43,8 @@ h2, h1 {
   font-style: italic;
 }
 
-#me-small {
-  display: none;
+#info-and-photo p img {
+  margin-top: 20px;
+  margin-left: 50px;
+  width: 235px;
 }

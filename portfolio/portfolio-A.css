@@ -10,8 +10,13 @@ img {
 }
 */
 
+
 #info-and-photo {
   position: relative;
+}
+
+#me-large{
+  display: none;
 }
 
 #personal-information {
@@ -32,5 +37,5 @@ img {
 }
 
 #work-experience {
-  margin-top: 22em;
+  margin-top: 23.4em;
 }

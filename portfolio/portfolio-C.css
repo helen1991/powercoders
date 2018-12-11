@@ -3,10 +3,11 @@ body {
 }
 
 #me-large {
-  display: inline;
   width: 250px;
 }
 
-#me-small {
-  display: none;
+
+#info-and-photo p img {
+  margin-top: 20px;
+  width: 235px;
 }

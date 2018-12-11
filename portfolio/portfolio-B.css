@@ -2,11 +2,11 @@ body {
  max-width: 960px;
 }
 
+
 #me-small {
-  display: inline;
-  width: 250px;
+  display: none;
 }
 
-#me-large {
-  display: none;
+#me-large{
+  display: inline;
 }
