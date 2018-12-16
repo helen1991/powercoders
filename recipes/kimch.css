@@ -9,13 +9,13 @@ h1 {
 }
 
 h2 {
-    background-color:rgb(222, 141, 47);
-    border-radius: 6px;
-    font-family: 'Source Code Pro', monospace;
+  background-color:rgb(222, 141, 47);
+  border-radius: 6px;
+  font-family: 'Source Code Pro', monospace;
 }
 
 p,ul,ol {
-     font-family: 'Average Sans', sans-serif;
+  font-family: 'Average Sans', sans-serif;
 }
 
 img{

@@ -6,10 +6,6 @@ body {
   position: relative;
 }
 
-
-
-
-
 h1 {
   background-color:rgb(252, 8, 37);
   border-radius: 6px;
@@ -17,15 +13,14 @@ h1 {
 }
 
 h2 {
-    background-color: rgb(252, 8, 37);
-    border-radius: 6px;
-    font-family: 'Source Code Pro', monospace;
+  background-color: rgb(252, 8, 37);
+  border-radius: 6px;
+  font-family: 'Source Code Pro', monospace;
 }
 
 p,ul,ol {
-     font-family: 'Average Sans', sans-serif;
+  font-family: 'Average Sans', sans-serif;
 }
-
 
 div {
   border: 1px solid black;

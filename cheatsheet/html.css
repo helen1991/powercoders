@@ -1,0 +1,15 @@
+html{
+  background-color:rgba(42, 46, 42, 0.06);
+}
+
+h1 {
+  background-color:rgba(24, 28, 28, 0.32);
+  text-align: center;
+  border-radius: 6px;
+  margin-left: 1px;
+  font-family: 'Fanwood Text', serif;
+}
+
+ul, p {
+  font-family: 'Yantramanav', sans-serif;
+}

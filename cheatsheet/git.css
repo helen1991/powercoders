@@ -1,0 +1,27 @@
+html{
+  background-color:rgba(42, 46, 42, 0.06);
+}
+
+
+h1 {
+  background-color:rgba(24, 28, 28, 0.32);
+  text-align: center;
+  border-radius: 6px;
+  margin-left: 1px;
+  font-family: 'Fanwood Text', serif;
+}
+
+h2 {
+  background-color:rgba(102, 100, 103, 0.35);
+  border-radius: 6px;
+  margin-left: 1px;
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+span.percent{
+  color: red;
+}
+
+ul {
+ font-family: 'Yantramanav', sans-serif;
+}

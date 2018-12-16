@@ -1,87 +1,88 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Git cheatsheet</title>
-</head>
-<body>
+  <head>
+    <title>Git cheatsheet</title>
+    <link rel="stylesheet" type="text/css" href="git.css">
+    <link href="https://fonts.googleapis.com/css?family=Gamja+Flower" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Fanwood+Text|IBM+Plex+Mono|Yantramanav" rel="stylesheet">
+  </head>
 
-  <h1>Git</h1>
-
-  <p>Here is so point about git.</p>
-
-  <ul>
-  <li>We are using git.</li>
-   <li>Because it is.
+  <body>
+    <h1>Git</h1>
+    <p>Here is so point about git.</p>
+      <ul>
+        <li>We are using git.</li>
+        <li>Because it is.
       <ul>
         <li>Very popular in industry and open source.</li>
         <li>Has lots of powerful features.</li>
         <li>Lots of people write about it.</li>
         <li>Has concepts shared by other tools.</li>
       </ul>
-    </li>
-    <li>Important: "Easy to learn" is not one of its feathers</li>
-  </ul>
-  <h2>git config.</h2>
-  <ol>
-    <li>% git config --global user.email nikclayton@powercoders.org</li>
-    <li>% git config --global user.name "Nik Clayton"</li>
-   </ol>
-  <p>run these two commands, using your e-mail address and name.</p>
+      </li>
+        <li>Important: "Easy to learn" is not one of its feathers</li>
+      </ul>
+      
+    <h2>git config.</h2>
+      <ol>
+        <li><span class="percent">% git config --</span>global user.email nikclayton@powercoders.org</li>
+        <li><span class="percent">% git config --</span>global user.name "Nik Clayton"</li>
+      </ol>
+    <p>run these two commands, using your e-mail address and name.</p>
 
-  <h2>Typical Git workflow</h2>
-  <ol>
-    <li>Edit one or more files to make your change</li>
-    <li>Copy the files to the index, with git add</li>
-    <li>Review the changes in the index
+    <h2>Typical Git workflow</h2>
+      <ol>
+        <li>Edit one or more files to make your change</li>
+        <li>Copy the files to the index, with git add</li>
+        <li>Review the changes in the index
       <ul>
         <li>Double check everything is included</li>
         <li>Remove files not related to this change</li>
       </ul>
-    </li>
-    <li>Move the files from the index to the repository, with git commit</li>
-   </ol>
+      </li>
+        <li>Move the files from the index to the repository, with git commit</li>
+      </ol>
 
-  <h2>git init</h2>
-  <ol>
-    <li>Open a shell (or use an existing one)</li>
-    <li>Navigate to the poco directory</li>
-    <li>Make sure you're in the correct directory with pwd</li>
-    <li>Run git init</li>
-  </ol>
- <p>% git init</p>
+    <h2>git init</h2>
+      <ol>
+        <li>Open a shell (or use an existing one)</li>
+        <li>Navigate to the poco directory</li>
+        <li>Make sure you're in the correct directory with pwd</li>
+        <li>Run git init</li>
+      </ol>
+    <p><span class="percent">% git init</span></p>
 
- <h2>git status</h2>
- <ul>
-   <li>What's the state of the repository?</li>
-   <li>We'll be using this frequently</li>
- </ul>
- <p>% git status</p>
+   <h2>git status</h2>
+     <ul>
+       <li>What's the state of the repository?</li>
+       <li>We'll be using this frequently</li>
+     </ul>
+   <p>% git status</p>
 
- <h2>git add</h2>
-  <ul>
-    <li>git add tells Git to copy the file to the index</li>
-    <li>This does not commit the file to the repository</li>
-  </ul>
-  <p>% cd scratch<br>
-% git add index.html<br>
-% git status</p>
+   <h2>git add</h2>
+     <ul>
+       <li>git add tells Git to copy the file to the index</li>
+       <li>This does not commit the file to the repository</li>
+     </ul>
+   <p><span class="percent">% cd scratch<br>
+    % git add index.html<br>
+    % git status</span></p>
 
-<h2>git commit</h2>
-<p>% git commit -m "Save first version of file."<br>
-[master (root-commit) d1ee782] Save first version of file.<br>
- 1 file changed, 10 insertions(+)<br>
- create mode 100644 index.html</p>
+   <h2>git commit</h2>
+   <p><span class="percent">% git commit -m</span> "Save first version of file."<br>
+    [master (root-commit) d1ee782] Save first version of file.<br>
+    1 file changed, 10 insertions(+)<br>
+    create mode 100644 index.html</p>
 
- <h2>git log</h2>
- <p>% git log</p>
+   <h2>git log</h2>
+   <p>% git log</p>
 
- <h2>git diff</h2>
- <p>% git diff<br>% git diff index.html<br>
-   Once we've made some changes that we want to add to the index it can be<br>
+   <h2>git diff</h2>
+   <p><span class="percent">% git diff<br>% git diff index.html</span></p>
+   <p>Once we've made some changes that we want to add to the index it can be<br>
     helpful to easily view them to double check that they're what we want.
-    For that we use the git diff command.
+    For that we use the git diff command.<br>
     This shows the difference between what's in the working directory and
     what's inthe index.</p>
-
-</body>
+  </body>
 </html>

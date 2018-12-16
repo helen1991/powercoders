@@ -1,0 +1,15 @@
+html {
+  background-color:rgba(140, 150, 147, 0.24);
+}
+
+h1 {
+  background-color:rgba(46, 42, 54, 0.43);
+  text-align: center;
+  border-radius: 6px;
+  margin-left: 1px;
+  color:rgb(3, 2, 0);
+}
+
+ul {
+  font-family: 'Yantramanav', sans-serif;
+}
