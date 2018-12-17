@@ -22,21 +22,21 @@ h1 {
 }
 
 h2 {
-    background-color: rgba(32, 28, 28, 0.05);
-    border-radius: 1px;
-    font-family: 'Source Code Pro', monospace;
-    padding-left: 20px;
-    padding-right: 20px;
+  background-color: rgba(32, 28, 28, 0.05);
+  border-radius: 1px;
+  font-family: 'Source Code Pro', monospace;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 p,ul,ol {
-     font-family: 'Average Sans', sans-serif;
-     font-size: 18px;
+  font-family: 'Average Sans', sans-serif;
+  font-size: 18px;
 }
 
 h2, h1 {
-    text-align: left;
-    text-transform: uppercase;
+  text-align: left;
+  text-transform: uppercase;
 }
 
 .date {
@@ -45,6 +45,6 @@ h2, h1 {
 
 #info-and-photo p img {
   margin-top: 20px;
-  margin-left: 50px;
   width: 235px;
+  margin-left: 50px;
 }
