@@ -27,6 +27,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
     let li = createNewListItem(inputBox.value);
     let ul = document.querySelector('ul');
     ul.appendChild(li);
+    inputBox.value = '';
 
     //call createNewListItem with the contents of the input widget and save
     //the result in variable
@@ -35,11 +36,12 @@ document.addEventListener('DOMContentLoaded', function (event) {
     // Add code here that listen for 'keyup' on the 'input' element
    //and logs the event.key property
   document.querySelector('input').addEventListener('keyup',function (event){
-    if (event.key === 'Enter'){
+    if (event.key === 'Enter') {
       console.log(event.key);
       let inputBox = document.getElementById('item');
       let li = createNewListItem(inputBox.value);
       document.querySelector('ul').appendChild(li);
+      inputBox.value = '';
     }
   });
 });
