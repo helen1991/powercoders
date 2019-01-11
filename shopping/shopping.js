@@ -6,11 +6,13 @@ function createNewListItem(itemName) {
   let textSpan = document.createTextNode(itemName);
   let deleteButton = document.createTextNode('delete');
 
+
   span.appendChild(textSpan);
   button.appendChild(deleteButton);
 
   //Add a click handler that logs the click here
   button.addEventListener('click', function (event) {
+    document.getElementById('item').focus();
     console.log('Delete button is clicked: ' + itemName);
     listItem.remove();
   });
@@ -21,31 +23,29 @@ function createNewListItem(itemName) {
 }
 
 document.addEventListener('DOMContentLoaded', function (event) {
+  let inputBox = document.getElementById('item');
+  let shoppingList = document.querySelector('ul');
+
   document.querySelector('button').addEventListener('click', function (event) {
-    let inputBox = document.getElementById('item');
-    createNewListItem(inputBox.value);
-    let li = createNewListItem(inputBox.value);
-    let ul = document.querySelector('ul');
-    ul.appendChild(li);
-    inputBox.value = '';
-
-    //call createNewListItem with the contents of the input widget and save
-    //the result in variable
-
-  });
-    // Add code here that listen for 'keyup' on the 'input' element
-   //and logs the event.key property
-  document.querySelector('input').addEventListener('keyup',function (event){
-    if (event.key === 'Enter') {
-      console.log(event.key);
-      let inputBox = document.getElementById('item');
-      let li = createNewListItem(inputBox.value);
-      document.querySelector('ul').appendChild(li);
+    if (inputBox.value.trim()!== '') {
+      shoppingList.appendChild(createNewListItem(inputBox.value.trim()));
       inputBox.value = '';
     }
+    inputBox.focus();
   });
-});
 
+  inputBox.addEventListener('keyup', function (event) {
+    if(inputBox.value.trim() !== ''){
+    if (event.key === 'Enter'){
+        shoppingList.appendChild(createNewListItem(inputBox.value.trim()));
+        inputBox.value = '';
+
+      }
+    }
+  });
+
+  inputBox.focus();
+});
 
 
 
