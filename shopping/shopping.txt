@@ -1,0 +1,141 @@
+Line 1 function createNewListItem(itemName) {
+* declares a function called `createNewListItem`. This function takes one parameter, called `itemName`.
+
+Line 2 const listItem = document.createElement('li');
+*It calls the `createElement` method on the DOM object in the global `document` variable. 
+-It passes a single string parameter, `li`, to the method, creating a new `li` element in the DOM. 
+-This element is not attached to any other element. The new element is returned and saved in to the 
+constant variable called `listItem`.
+
+Line 3 const span = document.createElement('span'); 
+*It calls the `createElement` method on the DOM object in the global `document` variable. 
+-It passes a single string parameter, `span`, to the method, creating a new `span` element in the DOM. 
+-This element is not attached to any other element. The new element is returned and saved in to the 
+constant variable called `span`.
+
+Line 4 const button = document.createElement('button');
+*It calls the `createElement` method on the DOM object in the global `document` variable. 
+-It passes a single string parameter, `button`, to the method, creating a new `button` element in the DOM. 
+-This element is not attached to any other element. The new element is returned and saved in to the 
+constant variable called `button`.
+
+Line 6 const textSpan = document.createTextNode(itemName);
+*The createTextNode() method creates a Text Node with the specified text.
+-textspan is a Text node. And itemName is a string containing the data to be put in the text node.
+
+Line 7 const deleteButton = document.createTextNode('delete');
+*The createTextNode() method creates a Text Node with the specified text.
+-deleteButton is a Text node.'delete' is also a name and a string containing the data to be put in the text node.
+
+Line 10 span.appendChild(textSpan);
+*The appendChild() method appends a node as the last child of a node and moves it from its current position to the new position 
+-textSpan is a Text node which will be append to the span and then attached the span to the document.
+
+Line 11 button.appendChild(deleteButton);
+*The appendChild() method appends a node as the last child of a node and moves it from its current position to the new position 
+-deleteButton is a Text node which will be append to the span and then attached the button to the document.
+
+Line 14 button.addEventListener('click', function (event) {
+*The addEventListener() method attaches an event handler to the called button. And we have two parameter.
+-The first parameter is the type of the event (like "click" or "mousedown").
+-The second parameter is the function we want to call when the event occurs.
+  
+Line 15 document.getElementById('item').focus();
+*The getElementById() method returns the element that has the id ('item') attribute with the specified value.
+-It help us in order to accesse HTML.And the ID should be unique within a page.
+-.focus() is used to focus the curser on the inputBox, when the page is reloaded.
+ 
+Line 16 console.log('Delete button is clicked: ' + itemName);
+*The console.log() method writes a message to the console.
+-The console is useful for testing purposes.
+
+Line 17 listItem.remove();
+*.remove() is remove the listItem. 
+
+Line 20 listItem.appendChild(span);
+*The appendChild() method appends the child to the parent, that means it moves from its current position to the new position. 
+-span is a Text node which will be append to the span and then attached the listItem to the document.
+
+Line 21 listItem.appendChild(button);
+*The appendChild() method appends the child to the parent, that means it moves from its current position to the new position. 
+-button is a Text node which will be append to the span and then attached the listItem to the document.
+
+Line 22 return listItem;
+*It will stops the execution of a function and returns a value from that function.That means it will return the value of listItem.
+ 
+Line 25 document.addEventListener('DOMContentLoaded', function (event) {
+*The addEventListener() method attaches an event handler to the document.'DOMContentLoaded' help the hole function to be loaded 
+in the browser and can be seen what have been done.And function is called when the event is occurs.
+ 
+Line 26 const inputBox = document.getElementById('item');
+*It calls the .getElementById method on the DOM object in the global `document` variable. 
+-It looks for the Element  by the given id `item` and saves this in to the constant variable inputBox.
+
+Line 27  const shoppingList = document.querySelector('ul');
+*It calls the .querySelector method on the DOM object in the global `document` variable.
+-And it selects element specified by the 'ul'.The selected element is returned and saved in to the constant variable called shoppingList.
+
+Line 28  const addItemButton = document.querySelector('button');
+*It calls the .querySelector method on the DOM object in the global `document` variable.
+-And it selects element specified by the 'button'.The selected element is returned and saved in to the constant variable called addItemButton.
+ 
+Line 30 document.querySelector('button').addEventListener('click', function (event) {
+*It adds an event handler method called 'addEventListener' to the document.querySelector defined 
+on line 28. The event handler contains two parameters : 'click' and 'function(event)'.When the click event is fired, 
+the event handler listens, and the function(event) will run.
+ 
+Line 31 if (inputBox.value.trim()!== '') {
+*if (inputBox.value !== '') means if the inputBox is not empty.
+* .trim() method removes whitespace from the beginning and end of the string. 
+ 
+Line 32 shoppingList.appendChild(createNewListItem(inputBox.value.trim()));
+*We are calling the method trim on the string value of inputBox, that is going to result in a string value,  
+this value is then passed to the createNewListItem, .appendchild have one parameter called 'createNewLIstItem'.
+-which is later appended / attached to the shoppingList. This is on the 'click' event.
+ 
+Line 33 inputBox.value = '';
+*we want the inputBox to be empty.
+
+Line 34 addItemButton.disabled = true;
+*It will disable the button by saying true and it will be inactive. 
+
+Line 36 inputBox.focus();
+* When the page is loaded the cursor should be focused in the inputBox directly.
+
+Line 39  inputBox.addEventListener('keyup', function (event) {
+*The addEventListener() method attaches an event handler to the inputBox. And we have two parameter.
+-The first parameter is the type of the event (like "keyup").
+-The second parameter is the function we want to call when the event occurs.
+
+Line 40 if(inputBox.value.trim() !== ''){
+* means if the inputBox is not empty.
+ .trim() method removes whitespace from the beginning and end of the string. 
+
+Line 41 addItemButton.disabled = false;
+*It will enable the button by saying false and the button wil be active.
+
+Line 42 if (event.key === 'Enter'){
+*if the value and the type of the event.key, which is the user interactive value, is equal to the string 'Enter'
+
+Line 43 shoppingList.appendChild(createNewListItem(inputBox.value.trim()));
+*We are calling the method trim on the string value of inputBox, that is going to result in a string value,  
+this value is then passed to the createNewListItem, .appendchild have one parameter called 'createNewLIstItem'.
+-which is later appended / attached to the shoppingList. This is on the 'keyup' event.
+
+Line 44 inputBox.value = '';
+*we want the inputBox to be empty.
+
+Line 48 if (inputBox.value.trim() === ''){
+* means if the inputBox is empty.
+ .trim() method removes whitespace from the beginning and end of the string. 
+
+Line 49 addItemButton.disabled = true;
+*It will disable the button by saying true and it will be inactive.
+
+Line 53 inputBox.focus();
+*When the 'DOMContentLoaded' is loaded the cursor should be focused in the inputBox directly.
+
+Line 54 addItemButton.disabled = true;
+*It will disable the button by saying true and the button will be inactive.
+
+ 
