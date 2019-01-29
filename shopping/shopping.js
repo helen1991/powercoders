@@ -5,17 +5,14 @@
  * @returns {HTMLElement} li element
  */
 
-function createNewListItem(itemName) {
+function createNewListItem(itemName, quantity) {
   const listItem = document.createElement('li');
   const span = document.createElement('span');
   const deleteIcon = document.createElement('i');
-  const clearListButton = document.querySelector('button#clear');
-  const listItemCheck = document.querySelectorAll('li');
 
   const textSpan = document.createTextNode(itemName);
-
-
   span.appendChild(textSpan);
+
   listItem.appendChild(deleteIcon).className = 'far fa-trash-alt';
 
   //Add a click handler that logs the click here
@@ -28,6 +25,14 @@ function createNewListItem(itemName) {
   });
 
   listItem.appendChild(span);
+  if (quantity !== '') {
+    listItem.appendChild(document.createTextNode(' '));
+    const quantityBox = document.createElement('span');
+    quantityBox.innerText = `(${quantity})`;
+    listItem.appendChild(quantityBox);
+  }
+
+
   listItem.appendChild(deleteIcon);
   return listItem;
 }
@@ -41,12 +46,16 @@ function domContentLoaded() {
 
   addItemButton.addEventListener('click', function (event) {
     const trimmedValue = inputBox.value.trim();
-
+    const quantityBox = document.getElementById('qty').value.trim();
     if (trimmedValue === '') {
       return;
     }
-    shoppingList.appendChild(createNewListItem(trimmedValue));
+
+    const quantity = document.getElementById('qty');
+    shoppingList.appendChild(createNewListItem(trimmedValue, quantityBox));
     inputBox.value = '';
+    quantity.value = '';
+
     addItemButton.disabled = true;
     clearListButton.disabled = false;
     inputBox.focus();
@@ -64,7 +73,10 @@ function domContentLoaded() {
       return;
     }
 
-    shoppingList.appendChild(createNewListItem(trimmedValue));
+    const quantity = document.getElementById('qty');
+    shoppingList.appendChild(createNewListItem(trimmedValue, quantity.value.trim()));
+
+    quantity.value = '';
     inputBox.value = '';
     addItemButton.disabled = true;
     clearListButton.disabled = false;
