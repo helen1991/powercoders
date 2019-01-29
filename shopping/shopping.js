@@ -32,7 +32,7 @@ function createNewListItem(itemName) {
   return listItem;
 }
 
-document.addEventListener('DOMContentLoaded', function (event) {
+function domContentLoaded() {
   const inputBox = document.getElementById('item');
   const shoppingList = document.querySelector('ul');
   const addItemButton = document.querySelector('button');
@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
     inputBox.focus();
   });
 
- inputBox.addEventListener('keyup', function (event) {
+  inputBox.addEventListener('keyup', function (event) {
     const trimmedValue = inputBox.value.trim();
     addItemButton.disabled = inputBox.value.trim() === '';
 
@@ -84,7 +84,15 @@ document.addEventListener('DOMContentLoaded', function (event) {
   inputBox.focus();
   addItemButton.disabled = true;
   clearListButton.disabled = true;
-});
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', function (event) {
+    domContentLoaded();
+  });
+} else {
+  domContentLoaded();
+}
 
 
 
