@@ -1,67 +1,56 @@
 /**
+ * Represent an item in the shopping list.
+ *
+ * @param {string} name - Name of the item
+ * @param {string} quantity - Quantity of the item
+ * @constructor - Returns the object with name and quantity properties
+ */
+function ShoppingListItem(name, quantity) {
+  this.name = name;
+  this.quantity = quantity;
+}
+
+/**
  * Creates and returns an 'li' element for inclusion in the shopping list.
  *
- * @param {string} itemName Name of the item to add to the list
+ * @param {ShoppingListItem} item Item to append to the list
  * @returns {HTMLElement} li element
  */
-
-function createNewListItem(itemName, quantity) {
+function createNewListItem(item) {
   const listItem = document.createElement('li');
   const span = document.createElement('span');
-  const deleteIcon = document.createElement('i');
+  const deleteButton = document.createElement('button');
+  const textSpan = document.createTextNode(item.name);
 
-  const textSpan = document.createTextNode(itemName);
   span.appendChild(textSpan);
+  listItem.appendChild(span);
 
-  listItem.appendChild(deleteIcon).className = 'far fa-trash-alt';
-
+  if (item.quantity !== '') {
+    listItem.appendChild(document.createTextNode(' '));
+    const quantityBox = document.createElement('span');
+    quantityBox.innerText = `(${item.quantity})`;
+    listItem.appendChild(quantityBox);
+  }
+  deleteButton.className = 'far fa-trash-alt';
   //Add a click handler that logs the click here
-  deleteIcon.addEventListener('click', function (event) {
+  deleteButton.addEventListener('click', function () {
     document.getElementById('item').focus();
-    console.log('Delete button is clicked: ' + itemName);
     listItem.remove();
-
     document.querySelector('button#clear').disabled = document.querySelectorAll('li').length === 0;
   });
 
-  listItem.appendChild(span);
-  if (quantity !== '') {
-    listItem.appendChild(document.createTextNode(' '));
-    const quantityBox = document.createElement('span');
-    quantityBox.innerText = `(${quantity})`;
-    listItem.appendChild(quantityBox);
-  }
-
-
-  listItem.appendChild(deleteIcon);
+  listItem.appendChild(deleteButton);
   return listItem;
 }
 
 function domContentLoaded() {
+  const quantityBox = document.getElementById('qty');
   const inputBox = document.getElementById('item');
   const shoppingList = document.querySelector('ul');
   const addItemButton = document.querySelector('button');
   const clearListButton = document.querySelector('button#clear');
 
-
-  addItemButton.addEventListener('click', function (event) {
-    const trimmedValue = inputBox.value.trim();
-    const quantityBox = document.getElementById('qty').value.trim();
-    if (trimmedValue === '') {
-      return;
-    }
-
-    const quantity = document.getElementById('qty');
-    shoppingList.appendChild(createNewListItem(trimmedValue, quantityBox));
-    inputBox.value = '';
-    quantity.value = '';
-
-    addItemButton.disabled = true;
-    clearListButton.disabled = false;
-    inputBox.focus();
-  });
-
-  inputBox.addEventListener('keyup', function (event) {
+  function onKeyup(event) {
     const trimmedValue = inputBox.value.trim();
     addItemButton.disabled = inputBox.value.trim() === '';
 
@@ -74,15 +63,38 @@ function domContentLoaded() {
     }
 
     const quantity = document.getElementById('qty');
-    shoppingList.appendChild(createNewListItem(trimmedValue, quantity.value.trim()));
+    const item = new ShoppingListItem(trimmedValue, quantityBox.value.trim());
 
+    shoppingList.appendChild(createNewListItem(item));
     quantity.value = '';
     inputBox.value = '';
     addItemButton.disabled = true;
     clearListButton.disabled = false;
+
+  }
+
+  addItemButton.addEventListener('click', function () {
+    const trimmedValue = inputBox.value.trim();
+    if (trimmedValue === '') {
+      return;
+    }
+
+    const quantity = document.getElementById('qty');
+    const item = new ShoppingListItem(trimmedValue, quantityBox.value.trim());
+
+    shoppingList.appendChild(createNewListItem(item));
+    inputBox.value = '';
+    quantity.value = '';
+
+    addItemButton.disabled = true;
+    clearListButton.disabled = false;
+    inputBox.focus();
   });
 
-  clearListButton.addEventListener('click', function (event) {
+  inputBox.addEventListener('keyup', onKeyup);
+  quantityBox.addEventListener('keyup', onKeyup);
+
+  clearListButton.addEventListener('click', function () {
     const items = document.querySelectorAll('li');
     items.forEach(function (el) {
       console.log('All the items are Clear');
@@ -99,12 +111,13 @@ function domContentLoaded() {
 }
 
 if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', function (event) {
+  document.addEventListener('DOMContentLoaded', function () {
     domContentLoaded();
   });
 } else {
   domContentLoaded();
 }
+
 
 
 
