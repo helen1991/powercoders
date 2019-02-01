@@ -13,22 +13,22 @@ function ShoppingListItem(name, quantity) {
 /**
  * Creates and returns an 'li' element for inclusion in the shopping list.
  *
- * @param {ShoppingListItem} item Item to append to the list
+ *
  * @returns {HTMLElement} li element
  */
-function createNewListItem(item) {
+ShoppingListItem.prototype.toListItem = function() {
   const listItem = document.createElement('li');
   const span = document.createElement('span');
   const deleteButton = document.createElement('button');
-  const textSpan = document.createTextNode(item.name);
+  const textSpan = document.createTextNode(this.name);
 
   span.appendChild(textSpan);
   listItem.appendChild(span);
 
-  if (item.quantity !== '') {
+  if (this.quantity !== '') {
     listItem.appendChild(document.createTextNode(' '));
     const quantityBox = document.createElement('span');
-    quantityBox.innerText = `(${item.quantity})`;
+    quantityBox.innerText = `(${this.quantity})`;
     listItem.appendChild(quantityBox);
   }
   deleteButton.className = 'far fa-trash-alt';
@@ -41,7 +41,7 @@ function createNewListItem(item) {
 
   listItem.appendChild(deleteButton);
   return listItem;
-}
+};
 
 function domContentLoaded() {
   const quantityBox = document.getElementById('qty');
@@ -65,12 +65,12 @@ function domContentLoaded() {
     const quantity = document.getElementById('qty');
     const item = new ShoppingListItem(trimmedValue, quantityBox.value.trim());
 
-    shoppingList.appendChild(createNewListItem(item));
+    shoppingList.appendChild(item.toListItem());
     quantity.value = '';
     inputBox.value = '';
     addItemButton.disabled = true;
     clearListButton.disabled = false;
-
+    quantityBox.focus();
   }
 
   addItemButton.addEventListener('click', function () {
@@ -82,7 +82,7 @@ function domContentLoaded() {
     const quantity = document.getElementById('qty');
     const item = new ShoppingListItem(trimmedValue, quantityBox.value.trim());
 
-    shoppingList.appendChild(createNewListItem(item));
+    shoppingList.appendChild(item.toListItem());
     inputBox.value = '';
     quantity.value = '';
 
