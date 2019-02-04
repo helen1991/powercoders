@@ -1,0 +1,54 @@
+body {
+  margin: 0 auto;
+  width: 1000px;
+}
+#body {
+  background-image: url(../static/shopping.jpg);
+  background-repeat: no-repeat;
+  min-height: 600px;
+}
+
+#item {
+  border: 1px solid red;
+}
+
+#add {
+  background-color: lightgreen;
+  padding: 5px;
+  border: 1px solid black;
+}
+
+.list {
+  margin: 0 auto;
+  width: 500px;
+}
+h1 {
+  color: red;
+  font-style: italic;
+}
+
+ul {
+  list-style: none;
+}
+
+ul li {
+  color: blue;
+}
+
+.far {
+  color: red;
+  margin: 4px;
+}
+
+li {
+  font-family: 'Rancho', cursive;
+  font-size: 20px;
+}
+
+.nice {
+  text-decoration: line-through;
+}
+
+li:nth-child(even) {
+  color: red;
+}
