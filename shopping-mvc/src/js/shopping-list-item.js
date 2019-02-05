@@ -26,15 +26,9 @@ class ShoppingListItem {
       listItem.appendChild(quantityBox);
     }
     deleteButton.className = 'far fa-trash-alt';
-//Add a click handler that logs the click here
-    deleteButton.addEventListener('click', function () {
-      document.getElementById('item').focus();
-      listItem.remove();
-      document.querySelector('button#clear').disabled = document.querySelectorAll('li').length === 0;
-    });
+//Add a click handler that logs the click her
 
     listItem.appendChild(deleteButton);
     return listItem;
-  };
-
+  }
 }

@@ -49,6 +49,6 @@ li {
   text-decoration: line-through;
 }
 
-li:nth-child(even) {
+/*li:nth-child(even) {
   color: red;
 }
