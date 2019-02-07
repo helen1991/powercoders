@@ -40,4 +40,12 @@ class Model {
     this.items_.splice(i, 1);
     this.view_.update();
   }
+
+  /**
+   * clear all item from the shopping list
+   */
+  clearList() {
+    this.items_ = [];
+    this.view_.update();
+  }
 }
